@@ -1,0 +1,75 @@
+//klasa
+
+Klasa to podstawowa konstrukcja logiczna, na której bazuje cały język C#,
+ponieważ to ona definiuje każdy obiekt i określa jego możliwości. Jedną z
+najważniejszych cech klasy jest to, że definiuje nowy typ danych.
+Jest to swoisty szablon pewnego obiektu, natomiast obiekt jest egzemplarzem klasy.
+
+//obiekt
+
+Obiekt jest instancją klasy, czyli tworem o określonym zachowaniu i cechach
+zdefiniowanych w klasie. Nie możemy działać na klasie tylko na obiekcie,
+czyli instancji klasy.
+
+//modyfikatory dostępu
+
+a) public - publiczne składniki klasy są dostępne dla wszystkich metod wszystkich klas
+
+b) private - składowe prywatne są dostępne tylko dla metod klasy, w której się znajdują
+
+c) protected - dostępne są dla klasy, w której się znajdują oraz dla klas dziedziczących
+po niej w danej bibliotece
+
+//dziedziczenie
+
+Dziedziczenie jest jednym z podstawowych atrybutów programowania obiektowego. Umożliwia
+zdefiniowanie klasy podrzędnej, która ponownie używa (dziedziczy), rozszerza lub modyfikuje
+zachowanie klasy nadrzędnej. Klasa, której składowe są dziedziczone, jest nazywana klasą bazową.
+
+//polimorfizm
+
+jest to tak zwane przesłanianie (nadpisywanie) funkcji. Idea polimorfizmu (dynamicznego) kręci
+się wokół dziedziczenia klas. Aby przesłonić metodę w klasie bazowej, należy użyć słowa
+kluczowego virtual, a w klasie podrzędnej override.
+
+//interfejs
+
+Interfejs jest definiowany jako swojego rodzaju wzór, który wszystkie klasy implementujące
+muszą przestrzegać. Interfejs określa co powinno być zrobione a klasa dziedzicząca jak
+powinno to być zrobione. Interfejs definiuje właściowości, metody, zdarzenia, które są
+składowymi tego interfejsu.
+
+//metoda wirtualna
+
+Metoda wirtualna jest metodą polimorficzną. Jest to funkcja składowa dowolnej klasy
+oznaczona słowem kluczowym virtual. Metoda wirtualna (funkcja wirtualna) jest metodą
+składową klasy, której wywołanie zależy od typu dynamicznego obiektu. Jej użycie włącza
+mechanizm polimorfizmu dynamicznego
+
+//klasa abstrakcyjna
+
+Klasy abstrakcyjne to klasy, które definiuje się z wykorzystaniem słowa kluczowego abstract.
+Służą one do tworzenia klas bazowych, czyli takich z których później inne klasy będą
+dziedziczyć. Istotną własnością klas abstrakcyjnych jest brak możliwości tworzenia ich instancji.
+
+//SOLID
+
+SOLID jest zbiorem dobrych praktyk architektonicznych w programowaniu obiektowym, pomagającym
+sprawić, aby nasz kod był bardziej zrozumiały, elastyczny na zmiany i łatwiejszy w zarządzaniu.
+
+S - SRP (Single Responsibility Principle), która oznacza, że nasza klasa czy metoda powinna
+posiadać tylko jedną odpowiedzialność.
+O - OCP (Open Close Principle), która mówi nam, że nasze klasy lub jej encje powinny być
+zamknięte na modyfikacje, a otwarte na rozszerzenia.
+L - LSP (Liskov Substitution Principle) co oznacza w uproszczeniu, że klasa dziedzicząca
+powinna rozszerzać klasę bazową bez wpływu na jej aktualne działanie.
+I -  ISP (Interface Segregation Principle) czyli inaczej mówiąc jest to zasada segregacji
+interfejsów. Oznacza ona, że wiele różnych interfejsów jest lepsze niż jeden duży i zbyt rozbudowany interfejs.
+D - DIP (Dependency Inversion Principle) czyli zasada odwracania zależności. Mówi nam,
+że moduły wysokiego poziomu nie powinny zależeć od modułów poziomu niskiego.
+
+//DRY (Dont Repeat Yourself)
+
+Zasada mówi nam o tym abyśmy się nie powtarzali. Co dokładnie autor ma na myśli? Chodzi mu o to,
+abyśmy tworzyli kod, który pozwala uniknąć niepotrzebnych powtórzeń w kodzie, kodu, który robi
+to samo i się powtarza.
