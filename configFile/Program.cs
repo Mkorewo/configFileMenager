@@ -9,11 +9,12 @@ namespace configFile
         static void Main(string[] args)
         {
             DataRequestMenager dataRequestMenager = new DataRequestMenager();
-            string path = Path.GetDirectoryName(typeof(Program).Assembly.Location)+"\\currencyConfigFile.txt";
+            string configFile = System.IO.File.ReadAllText(Path.GetDirectoryName(typeof(Program).Assembly.Location) + "\\currencyConfigFile.txt");
+            string path = Path.GetDirectoryName(typeof(Program).Assembly.Location) + "\\currencyResult.txt";
 
-            using(StreamWriter sw = new StreamWriter(path))
+            using (StreamWriter sw = new StreamWriter(path))
             {
-                sw.WriteLine(dataRequestMenager.GetExchangeRates());   
+                sw.WriteLine(dataRequestMenager.GetExchangeRates(configFile));
             }
 
         }

@@ -9,11 +9,15 @@ namespace configFile
 {
     internal class DataRequestMenager
     {
-        public string GetExchangeRates()
+        public string GetExchangeRates(string configFile)
         {
+            string[] currencies = configFile.Split(',');
+            string result = "";
+
             using (var httpClient = new HttpClient())
             {
-                string result="";
+
+                
                 var request = new HttpRequestMessage(HttpMethod.Get, "http://api.nbp.pl/api/exchangerates/tables/A/last/1?format=json");
                 var responseMessage = httpClient.SendAsync(request).Result;
                 var responseContent = responseMessage.Content.ReadAsStringAsync().Result;
@@ -21,7 +25,13 @@ namespace configFile
                 RateInfoArray[] rateInfoArray = JsonConvert.DeserializeObject<RateInfoArray[]>(responseContent);
                 foreach(var item in rateInfoArray.First().rates)
                 {
-                    result += $"{item.currency}: {item.mid}\n";
+                    for (int i = 0; i < currencies.Length; i++)
+                    {
+                        if (currencies[i] == item.code)
+                        {
+                            result += $"{item.currency}: {item.mid}\n";
+                        }
+                    }
                 }
 
                 return result;
